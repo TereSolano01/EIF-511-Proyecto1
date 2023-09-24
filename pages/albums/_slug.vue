@@ -10,28 +10,37 @@
 </script>
 
 <template>
-  <div class="container">
-   <HeaderView />
-   <div class="row">
-     <div class="three columns">
-       <img class="u-max-full-width" :src="'/images/'+album.image" alt="Italian Trulli">
-     </div>
-     <div class="six columns">
-       <h4>{{album.title}}</h4>
-       <div>
-                <p>Compositores: <NuxtLink :to="'/compositors/'+album.compositorId">{{album.compositor}}</NuxtLink></p>   
-                  <p> Año publicacion: {{album.year}};</p>
-                  <p>Generos: {{album.fields}}</p>
-                  <p>Pelicula: <NuxtLink :to="'/movies/'+album.movieId">{{album.movie}}</NuxtLink></p> 
+    <div>
+      <HeaderView />
+      <div>
+          <h4>{{album.title}}</h4>
+          <div class="content-section">
+            <div class="image-and-title">
+              <div class="image-column">
+                <img :src="'/images/'+album.image">
               </div>
-	  
-	    <nuxt-content :document="album" />
-	 </div>
-	 <div class="two columns"></div>
-   </div>
-   <FooterView />
- </div>
-</template>
+              <div class="title-column">
+                <div>
+                  <p>Compositores: <NuxtLink :to="'/compositors/'+album.compositorId">{{album.compositor}}</NuxtLink></p>   
+                    <p> Año staticacion: {{album.year}};</p>
+                    <p>Generos: {{album.fields}}</p>
+                    <p>Pelicula: <NuxtLink :to="'/movies/'+album.movieId">{{album.movie}}</NuxtLink></p> 
+                </div>
+                    <div class="info-section">
+                        <pre></pre>
+                        <nuxt-content :document="album" />
+                    </div>
+                 </div>
+               </div>
+              </div>
+            <div>
+          </div>
+      </div>
+      <FooterView />
+    </div>
+  </template>
+  
+
 
 <style scoped>
 @import url('../../static/css/details.css');
