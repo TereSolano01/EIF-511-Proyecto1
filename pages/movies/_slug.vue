@@ -35,3 +35,43 @@
    <FooterView />
  </div>
 </template>
+
+<template>
+    <div>
+      <HeaderView />
+      <div>
+          <h4>{{movie.title}}</h4>
+          <div class="content-section">
+            <div class="image-and-title">
+              <div class="image-column">
+                <img :src="'/images/'+movie.image">
+              </div>
+              <div class="title-column">
+                <div>  
+                    <p> Director: {{movie.Director}}</p>
+                    <p>Año: {{movie.year}}</p>
+                    <p>Genero: {{movie.genero}}</p>
+                </div>
+                <div class="info-section">
+                        <pre></pre>
+                        <nuxt-content :document="movie" />
+                        <ul>
+	     <li v-for="album of albums" :key="album.slug">
+	       <NuxtLink :to="{ name: 'albums-slug', params: { slug: album.slug } }">{{album.title}}</NuxtLink>
+	     </li>
+	   </ul>
+                    </div>
+                 </div>
+               </div>
+              </div>
+            <div>
+          </div>
+      </div>
+      <FooterView />
+    </div>
+  </template>
+
+
+<style scoped>
+@import url('../../static/css/details.css');
+</style>

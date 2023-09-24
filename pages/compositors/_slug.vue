@@ -44,7 +44,7 @@
         <div class="content-section">
           <div class="image-and-title">
             <div class="image-column">
-              <img :src="'static/images/'+compositor.image" async>
+              <img :src="'/images/'+compositor.image" async>
             </div>
             <div class="title-column">
               <div>
