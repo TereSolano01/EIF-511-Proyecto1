@@ -7,15 +7,15 @@
     <div class="carousel-inner">
         <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden="" checked="checked">
         <div class="carousel-item">
-          <img src="/static/images/movies/cruella-soundtrack.jpg" alt="Imagen de la noticia" />
+          <img src="../static/images/movies/cruella-soundtrack.jpg" alt="Cruella" />
         </div>
         <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
         <div class="carousel-item">
-          <img src="/static/images/movies/maxresdefault.jpg" alt="Imagen de la noticia" />
+          <img src="../static/images/movies/maxresdefault.jpg" alt="Grease" />
         </div>
         <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
         <div class="carousel-item">
-          <img src="/static/images/movies/Black-Panther-Wakanda-Forever-Soundtrack.jpg" alt="Imagen de la noticia" />
+          <img src="../static/images/movies/Black-Panther-Wakanda-Forever-Soundtrack.jpg" alt="Wakanda" />
         </div>
         <label for="carousel-3" class="carousel-control ">‹</label>
         <label for="carousel-2" class="carousel-control ">›</label>
