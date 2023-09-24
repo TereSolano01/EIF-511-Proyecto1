@@ -20,9 +20,8 @@
           <li class="grid-item" v-for="movie of movies" :key="movie.slug">
               <img class="u-max-full-width" :src="'/images/'+movie.image" alt="Descripción de la imagen">
               <NuxtLink :to="{ name: 'movies-slug', params: { slug: movie.slug } }">{{movie.Título}}</NuxtLink>
-              <p class="goto"><NuxtLink :to="{ name: 'movies-slug', params: { slug: movie.slug } }">{{movie.Título}} Ver película<i class="fa-solid fa-chevron-right" style="color: #000000;"></i></NuxtLink></p>
-              <p class="goto"><NuxtLink :to="movie._path">Ver película<i class="fa-solid fa-chevron-right" style="color: #000000;"></i></NuxtLink></p>
-          </li>
+              <p class="goto"><NuxtLink :to="{ name: 'movies-slug', params: { slug: movie.slug } }"> Ver película<i class="fa-solid fa-chevron-right" style="color: #000000;"></i></NuxtLink></p>
+            </li>
         </div>
    </ul>
   </div>
