@@ -16,6 +16,7 @@
      <p>This section presents information about authors</p>
    <ul>
      <li v-for="compositor of compositors" :key="compositor.slug">
+      <img class="u-max-full-width" :src="'/images/'+compositor.image" alt="Descripción de la imagen">
        <NuxtLink :to="{ name: 'compositors-slug', params: { slug: compositor.slug } }">{{compositor.name}}</NuxtLink>
      </li>
    </ul>
