@@ -1,5 +1,5 @@
 ---
-id: Aladdín
+id: aladdin
 Título: Aladdín
 Director: Ron Clements, John Musker
 year: 2019
