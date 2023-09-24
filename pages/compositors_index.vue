@@ -28,3 +28,11 @@
      <FooterView />
    </div>
   </template>
+  
+  <style scoped>
+@import url('../static/css/indexCompositores.css');
+
+.fila {
+  display: flex;
+}
+</style>
