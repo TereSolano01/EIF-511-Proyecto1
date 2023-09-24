@@ -10,16 +10,21 @@
 </script>
 
 <template>
-  <div class="container">
-   <HeaderView />
-   <h3 style="margin-top: 15px">Authors Information</h3>
-     <p>This section presents information about authors</p>
-   <ul>
-     <li v-for="compositor of compositors" :key="compositor.slug">
-      <img class="u-max-full-width" :src="'/images/'+compositor.image" alt="Descripción de la imagen">
-       <NuxtLink :to="{ name: 'compositors-slug', params: { slug: compositor.slug } }">{{compositor.name}}</NuxtLink>
-     </li>
-   </ul>
-   <FooterView />
- </div>
-</template>
+  <div>
+      <HeaderView />
+      <h2 style="margin-top: 15px">Películas</h2>
+      <p>Esta sección presenta información sobre películas.</p>
+      <div class="container centered-content">
+        <ul>
+          <div class="grid-container">
+            <li class="grid-item" v-for="compositor of compositors" :key="compositor.slug">
+                <img class="u-max-full-width" :src="'/images/'+compositor.image" alt="Descripción de la imagen">
+                <NuxtLink :to="{ name: 'compositors-slug', params: { slug: compositor.slug } }">{{compositor.Título}}</NuxtLink>
+                <p class="goto"><NuxtLink :to="{ name: 'compositors-slug', params: { slug: compositor.slug } }"> Ver película<i class="fa-solid fa-chevron-right" style="color: #000000;"></i></NuxtLink></p>
+              </li>
+          </div>
+     </ul>
+    </div>
+     <FooterView />
+   </div>
+  </template>
