@@ -32,3 +32,7 @@
    <FooterView />
  </div>
 </template>
+
+<style scoped>
+@import url('../../static/css/details.css');
+</style>
