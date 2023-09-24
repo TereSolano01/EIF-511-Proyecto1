@@ -1,10 +1,9 @@
 <script>
   export default {
     async asyncData({ $content, params }) {
-      const movies = await $content('movies').fetch()
-      return {
-        movies
-      }
+      const movie = await $content('movies', params.slug).fetch()
+      const albums = await $content('albums').where({ movieId: params.slug }).fetch()
+      return { movie, albums }
     }
   }
 </script>
@@ -12,13 +11,27 @@
 <template>
   <div class="container">
    <HeaderView />
-   <h3 style="margin-top: 15px">Movies Information</h3>
-     <p>This section presents information about publishers</p>
-   <ul>
-     <li v-for="movie of movies" :key="movie.slug">
-       <NuxtLink :to="{ name: 'movies-slug', params: { slug: movie.slug } }">{{movie.Título}}</NuxtLink>
-     </li>
-   </ul>
+   <div class="row">
+     <div class="three columns">
+       <img class="u-max-full-width" :src="'/images/'+movie.image">
+     </div>
+     <div class="six columns">
+       <h4>{{movie.Título}}</h4>
+       <div>  
+                  <p> Director: {{movie.Director}}</p>
+                  <p>Año: {{movie.year}}</p>
+                  <p>Genero: {{movie.genero}}</p>
+              </div>
+	    <nuxt-content :document="movie" />
+	 </div>
+	 <div class="three columns"></div>
+	   <h5>Albums</h5>
+	   <ul>
+	     <li v-for="album of albums" :key="album.slug">
+	       <NuxtLink :to="{ name: 'albums-slug', params: { slug: album.slug } }">{{album.title}}</NuxtLink>
+	     </li>
+	   </ul>
+   </div>
    <FooterView />
  </div>
 </template>
